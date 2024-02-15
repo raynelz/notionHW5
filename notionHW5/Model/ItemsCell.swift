@@ -7,10 +7,11 @@
 
 import UIKit
 
-class ItemsTableViewCell: UITableViewCell {
+class ItemsCell: UITableViewCell {
     
-    private let iconImageView = UIImageView()
-    private let label = UILabel()
+    //MARK: - UI Elements
+    let iconImage = UIImageView()
+    let nameLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,52 +21,60 @@ class ItemsTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError()
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+//MARK: - embedViews
+private extension ItemsCell {
+    
+    func embedViews() {
+        [iconImage, nameLabel].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview($0)
+        }
     }
     
-    public func configure(with model: ItemsModel) {
-        label.text = model.title
-        iconImageView.image = model.icon
-    }
-
 }
 
-private extension ItemsTableViewCell {
-    func embedViews() {
-        contentView.addSubview(iconImageView)
-        contentView.addSubview(label)
-    }
-}
-
-private extension ItemsTableViewCell {
+//MARK: - setupLayout
+private extension ItemsCell {
+    
     func setupLayout() {
         
         NSLayoutConstraint.activate([
-            iconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+            iconImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            iconImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            iconImage.heightAnchor.constraint(equalToConstant: 24),
+            iconImage.widthAnchor.constraint(equalToConstant: 24),
             
-            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            label.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 16),
-            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            nameLabel.leadingAnchor.constraint(equalTo: iconImage.trailingAnchor, constant: 10),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
         
     }
+    
 }
 
-private extension ItemsTableViewCell {
+//MARK: - setupAppearance
+private extension ItemsCell {
+    
     func setupAppearance() {
-        accessoryType = .disclosureIndicator
+        self.backgroundColor = UIColor.clear
+        nameLabel.font = .systemFont(ofSize: 14)
+        nameLabel.textColor = .white
         
-        iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        iconImageView.contentMode = .scaleAspectFit
-        iconImageView.tintColor = .darkGray
-        
-        label.numberOfLines = 1
-        
+        iconImage.tintColor = .white
+    }
+    
+}
+
+//MARK: - Configure
+extension ItemsCell {
+    func configure(item: Items) {
+        iconImage.image = item.icon
+        nameLabel.text = item.title
     }
 }

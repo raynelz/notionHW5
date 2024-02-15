@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		EC19907F2B50391500A02248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC19907E2B50391500A02248 /* AppDelegate.swift */; };
-		EC1990812B50391500A02248 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1990802B50391500A02248 /* SceneDelegate.swift */; };
 		EC1990832B50391500A02248 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1990822B50391500A02248 /* ViewController.swift */; };
-		EC1990862B50391500A02248 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1990842B50391500A02248 /* Main.storyboard */; };
 		EC1990882B50391600A02248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1990872B50391600A02248 /* Assets.xcassets */; };
 		EC19908B2B50391600A02248 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1990892B50391600A02248 /* LaunchScreen.storyboard */; };
+		EC5E78282B7A9BD7007D1BE6 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5E78272B7A9BD7007D1BE6 /* ItemsCell.swift */; };
+		EC5E782B2B7A9E9A007D1BE6 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5E782A2B7A9E9A007D1BE6 /* Items.swift */; };
+		ECFFF83A2B5A792F00C77E5C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ECFFF8392B5A792F00C77E5C /* SnapKit */; };
+		ECFFF83C2B5A792F00C77E5C /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = ECFFF83B2B5A792F00C77E5C /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC19907B2B50391500A02248 /* notionHW5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notionHW5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC19907E2B50391500A02248 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC1990802B50391500A02248 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EC1990822B50391500A02248 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EC1990852B50391500A02248 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC1990872B50391600A02248 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC19908A2B50391600A02248 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC19908C2B50391600A02248 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC5E78272B7A9BD7007D1BE6 /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
+		EC5E782A2B7A9E9A007D1BE6 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECFFF83A2B5A792F00C77E5C /* SnapKit in Frameworks */,
+				ECFFF83C2B5A792F00C77E5C /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +60,23 @@
 		EC19907D2B50391500A02248 /* notionHW5 */ = {
 			isa = PBXGroup;
 			children = (
+				EC5E78292B7A9E85007D1BE6 /* Model */,
 				EC19907E2B50391500A02248 /* AppDelegate.swift */,
-				EC1990802B50391500A02248 /* SceneDelegate.swift */,
 				EC1990822B50391500A02248 /* ViewController.swift */,
-				EC1990842B50391500A02248 /* Main.storyboard */,
 				EC1990872B50391600A02248 /* Assets.xcassets */,
 				EC1990892B50391600A02248 /* LaunchScreen.storyboard */,
 				EC19908C2B50391600A02248 /* Info.plist */,
 			);
 			path = notionHW5;
+			sourceTree = "<group>";
+		};
+		EC5E78292B7A9E85007D1BE6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC5E78272B7A9BD7007D1BE6 /* ItemsCell.swift */,
+				EC5E782A2B7A9E9A007D1BE6 /* Items.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +95,10 @@
 			dependencies = (
 			);
 			name = notionHW5;
+			packageProductDependencies = (
+				ECFFF8392B5A792F00C77E5C /* SnapKit */,
+				ECFFF83B2B5A792F00C77E5C /* SnapKit-Dynamic */,
+			);
 			productName = notionHW5;
 			productReference = EC19907B2B50391500A02248 /* notionHW5.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = EC1990722B50391500A02248;
+			packageReferences = (
+				ECFFF8382B5A792F00C77E5C /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = EC19907C2B50391500A02248 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +146,6 @@
 			files = (
 				EC19908B2B50391600A02248 /* LaunchScreen.storyboard in Resources */,
 				EC1990882B50391600A02248 /* Assets.xcassets in Resources */,
-				EC1990862B50391500A02248 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +158,14 @@
 			files = (
 				EC1990832B50391500A02248 /* ViewController.swift in Sources */,
 				EC19907F2B50391500A02248 /* AppDelegate.swift in Sources */,
-				EC1990812B50391500A02248 /* SceneDelegate.swift in Sources */,
+				EC5E782B2B7A9E9A007D1BE6 /* Items.swift in Sources */,
+				EC5E78282B7A9BD7007D1BE6 /* ItemsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EC1990842B50391500A02248 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC1990852B50391500A02248 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EC1990892B50391600A02248 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +308,6 @@
 				INFOPLIST_FILE = notionHW5/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,7 +335,6 @@
 				INFOPLIST_FILE = notionHW5/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +372,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ECFFF8382B5A792F00C77E5C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ECFFF8392B5A792F00C77E5C /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECFFF8382B5A792F00C77E5C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		ECFFF83B2B5A792F00C77E5C /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECFFF8382B5A792F00C77E5C /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EC1990732B50391500A02248 /* Project object */;
 }
